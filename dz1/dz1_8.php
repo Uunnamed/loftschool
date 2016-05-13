@@ -7,18 +7,18 @@
  */
 
 $table= '<table border="1" cellpadding="2"><th>  </th>';
-for($i=1;$i<=10;$i++){
+for($i = 1;$i <= 10;$i++){
     $table.="<th>$i</th>";
 }
 
-for($i=1;$i<=10;$i++){
-    $table.="<tr><td><b>$i</b></td>";
-    for($j=1;$j<=10;$j++){
+for($i = 1;$i <= 10;$i++){
+    $table.= "<tr><td><b>$i</b></td>";
+    for($j = 1;$j <= 10;$j++){
         $result = $i*$j;
-        if( $i%2==0 && $j%2 ==0){
+        if( $i%2 == 0 && $j%2 == 0){
             $result="($result)";
-        }else $result="[$result]";
-        $table.='<td align="center">'.$result.'</td>';
+        }else $result = "[$result]";
+        $table.= '<td align = "center">'.$result.'</td>';
     }
     $table.= '</tr>';
 }

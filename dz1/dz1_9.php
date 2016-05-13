@@ -6,9 +6,9 @@
 $str = "Наша маша громко плачет уронила в речку мячик";
 echo $str.'</br>';
 $str = explode(" ",$str);
-$i=0;
-while($i<count($str)){
+$i = 0;
+while($i < count($str)){
     echo $i.'-й элемент массива: '.$str[$i].'</br>';
     $i++;
 }
-echo implode('|',$str);
+echo implode('|',array_reverse($str));
