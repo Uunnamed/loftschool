@@ -11,11 +11,15 @@
 */
 
 function tableMath($a, $b){
-    for($i = 1; $i<=$a; $i++){
-        for($j = 1; $j <= $b; $j++){
-            echo $i*$j.' ';
+    if($a && $b) {
+        for ($i = 1; $i <= $a; $i++) {
+            for ($j = 1; $j <= $b; $j++) {
+                echo $i * $j . ' ';
+            }
+            echo '</br>';
         }
-        echo '</br>';
+    }else{
+        echo 'Недостаточно параметров, для вычислений';
     }
 
 }

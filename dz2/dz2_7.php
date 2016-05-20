@@ -19,4 +19,4 @@ function polindrome($str){
     }
 }
 
-echo polindrome('ап па');
+echo polindrome('ап     па');
