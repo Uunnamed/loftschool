@@ -7,11 +7,14 @@
 
 <?php
 $directory = './files/';
+if (!file_exists($directory)) {
+    mkdir($directory);
+}
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case "create":
             if (isset($_POST['fname']) && isset($_POST['text'])) {
-                file_put_contents($directory . $_POST['fname'].".txt", $_POST['text']);
+                file_put_contents($directory . $_POST['fname'] . ".txt", $_POST['text']);
             }
             break;
         case "update":
@@ -45,11 +48,11 @@ function getFiles($directory)
     $result = '<table border="1"><tr><th>Имя файла</th><th>Действия</th></tr>';
     $files = scandir($directory);
     for ($i = 2; $i < count($files); $i++) {
-        $result .= '<tr><td><a href="view.php?fname='.$files[$i].'">'.$files[$i].'</a></td>
+        $result .= '<tr><td><a href="view.php?fname=' . $files[$i] . '">' . $files[$i] . '</a></td>
         <td>
-        <a href="edit.php?fname='.$files[$i].'">Редактировать</a>
-        <a href="download.php?fname='.$files[$i].'">Скачать</a>
-        <a href="index.php?fname='.$files[$i].'&action=delete">Удалить</a>
+        <a href="edit.php?fname=' . $files[$i] . '">Редактировать</a>
+        <a href="download.php?fname=' . $files[$i] . '">Скачать</a>
+        <a href="index.php?fname=' . $files[$i] . '&action=delete">Удалить</a>
         </td></tr>';
     }
     return $result;
