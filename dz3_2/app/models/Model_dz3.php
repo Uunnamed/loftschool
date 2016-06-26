@@ -6,7 +6,9 @@ class Model_dz3 extends Model
 
     public function get_data()
     {
+
         if (!file_exists($this->directory)) {
+
             mkdir($this->directory,0755,1);
         }
         $result = scandir($this->directory);

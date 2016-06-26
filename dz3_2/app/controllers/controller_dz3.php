@@ -5,7 +5,7 @@ class Controller_dz3 extends Controller
     function __construct()
     {
         $this->model = new Model_dz3();
-        $this->view = new View();
+        $this->view  = new View();
     }
 
     public function action_index($message = '')

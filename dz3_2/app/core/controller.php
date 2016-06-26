@@ -4,13 +4,13 @@ class Controller
 {
     public $model;
     public $view;
-    
-    function __construct()
+    //В классах желательно всегда писать какого типа методы даже если public
+    public function __construct()
     {
         $this->view = new View();
     }
     
-    function action_index(){
+    public function action_index(){
         
     }
 }
